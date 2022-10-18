@@ -50,7 +50,7 @@ func (l *List) Delete(i int) error {
 }
 
 func (l *List) Save(filename string) error {
-	js, err := json.Marshal(filename)
+	js, err := json.Marshal(l)
 	if err != nil {
 		return err
 	}
@@ -61,12 +61,14 @@ func (l *List) Get(filename string) error {
 	file, err := ioutil.ReadFile(filename)
 	if err != nil {
 		if errors.Is(err, os.ErrNotExist) {
+			fmt.Println("Arquivo não existe")
 			return nil
 		}
 		return err
 	}
 
 	if len(file) == 0 {
+		fmt.Println("Arquivo Vazio!")
 		return nil
 	}
 
