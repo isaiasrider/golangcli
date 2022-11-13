@@ -21,7 +21,7 @@ func main() {
 	switch {
 	case len(os.Args) == 1:
 		for _, item := range *l {
-			fmt.Println(item)
+			fmt.Println(item.Task)
 		}
 	default:
 		item := strings.Join(os.Args[1:], " ")

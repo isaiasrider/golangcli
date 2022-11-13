@@ -58,5 +58,6 @@ func TestTodoCli(t *testing.T) {
 		if expected != string(out) {
 			t.Errorf("Expected %q, got %q instead", expected, string(out))
 		}
+		os.Remove("todo.json")
 	})
 }
