@@ -2,19 +2,13 @@ package main
 
 import (
 	"bytes"
-	_ "bytes"
 	"flag"
 	"fmt"
-	_ "fmt"
 	"github.com/microcosm-cc/bluemonday"
-	_ "github.com/microcosm-cc/bluemonday"
 	"github.com/russross/blackfriday/v2"
-	_ "github.com/russross/blackfriday/v2"
 	"io/ioutil"
-	_ "io/ioutil"
 	"os"
 	"path/filepath"
-	_ "path/filepath"
 )
 
 const (
