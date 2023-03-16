@@ -7,7 +7,7 @@ import (
 	"golang.org/x/oauth2"
 )
 
-func ListOrgs(token string, user string) {
+func ListRepos(token string, user string) {
 
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
@@ -15,17 +15,17 @@ func ListOrgs(token string, user string) {
 	authClient := oauth2.NewClient(ctx, ts)
 
 	client := github.NewClient(authClient)
-	// list organizations for my user for now...
+	// list organizations for the user
 	repos, _, err := client.Repositories.List(ctx, user, nil)
 	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println("Repos")
-	fmt.Printf("List of organizations: %v \n", github.Stringify(repos))
+	fmt.Printf("List of repositories: %v \n", github.Stringify(repos))
 
 }
 
-func CreteRepository(name string, token string, user string) {
+func CreateRepository(name string, token string, org string) {
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token})
