@@ -20,9 +20,9 @@ func main() {
 
 	switch {
 	case *repos:
-		github_interaction.ListOrgs(token, user)
+		github_interaction.ListRepos(token, user)
 	case *create:
-		github_interaction.CreteRepository(*reponame, token, user)
+		github_interaction.CreateRepository(*reponame, token, user)
 	default:
 		fmt.Fprintln(os.Stderr, "Invalid Option!")
 		flag.Usage()
