@@ -25,7 +25,7 @@ func ListRepos(token string, user string) {
 
 }
 
-func CreateRepository(name string, token string, user string) {
+func CreateRepository(name string, token string, org string) {
 	ctx := context.Background()
 	ts := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: token})
