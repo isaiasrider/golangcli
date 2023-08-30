@@ -1,3 +1,3 @@
-module github.com/isaiasrider/fileSystem/walk
+module github.com/isaiasrider/walk
 
-go 1.13
+go 1.21.0
